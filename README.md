@@ -34,7 +34,7 @@ Here’s how you can get started:
 1.  **Fork the repository:** Click the "Fork" button in the top right corner of this page.
 2.  **Clone the project:** Clone your forked repository to your local machine.
     ```bash
-    git clone [https://github.com/YOUR_USERNAME/Donutly.git](https://github.com/YOUR_USERNAME/Donutly.git)
+    git clone [https://github.com/YOUR_USERNAME/library_proj.git](https://github.com/YOUR_USERNAME/library_proj.git)
     ```
 3.  **Create a new branch:** Create a dedicated branch for your feature or bug fix.
     ```bash
@@ -43,6 +43,9 @@ Here’s how you can get started:
 4.  **Install dependencies:** Navigate to the project directory and install the required packages.
     ```bash
     npm install
+    pnpm install
+    pnpm build
+    pnpm run dev
     ```
 5.  **Make your changes:** Code away! Feel free to work on a bug, add a new feature, or improve documentation.
 6.  **Commit and push:** Commit your changes with a clear message and push them to your forked repository.
