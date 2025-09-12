@@ -1,0 +1,11 @@
+node_modules/
+.next/
+.git/
+*.log
+.DS_Store
+.idea/
+.vscode/
+*.swp
+README.md
+Dockerfile
+.dockerignore
