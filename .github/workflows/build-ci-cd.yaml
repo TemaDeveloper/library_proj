@@ -1,0 +1,60 @@
+name: CI/CD Docker Deployment to AWS EC2
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  # Job 1: Build and push the Docker images to Docker Hub
+  publish_docker_images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: temadeveloper
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+        
+      - name: Build and push backend image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./backend/library/
+          push: true
+          tags: temadeveloper/library_proj:backend-latest
+          
+      - name: Build and push frontend image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./frontend/
+          push: true
+          tags: temadeveloper/library_proj:frontend-latest
+
+  # Job 2: Deploy the Docker images to your EC2 instance
+  deploy_to_ec2:
+    runs-on: ubuntu-latest
+    needs: publish_docker_images # This job depends on the successful completion of the build job
+    steps:
+      - name: Deploy to Server via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # Pull the latest backend and frontend images
+            docker pull temadeveloper/library_proj:backend-latest
+            docker pull temadeveloper/library_proj:frontend-latest
+            
+            # Stop and remove old containers
+            docker stop library-backend-container || true
+            docker rm library-backend-container || true
+            docker stop library-frontend-container || true
+            docker rm library-frontend-container || true
+            
+            # Run the new containers
+            docker run -d --name library-backend-container -p 3001:3001 temadeveloper/library_proj:backend-latest
+            docker run -d --name library-frontend-container -p 80:3000 temadeveloper/library_proj:frontend-latest
