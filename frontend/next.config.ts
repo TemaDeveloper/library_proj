@@ -1,14 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
   experimental: {
     serverActions: {
       bodySizeLimit: '5mb'
     }
   },
   images: {
-    unoptimized: true,
     remotePatterns: [
        {
         protocol: 'http',
@@ -46,8 +44,7 @@ const nextConfig: NextConfig = {
       //   hostname: 's3.ap-south-1.amazonaws.com',
       // }
     ]
-  },
-  basePath: '/library_proj'
+  }
 };
 
 export default nextConfig;
