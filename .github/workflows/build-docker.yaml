@@ -1,0 +1,32 @@
+name: Build and Publish Docker image to Docker Hub
+
+on: 
+    [workflow_dispatch]
+
+jobs: 
+    publish_images:
+        runs-on: ubuntu-latest
+    
+        steps:
+
+            - name: docker hub login 
+              run: docker login -u temadeveloper -p ${{ secrets.DOCKER_HUB_TOKEN }}
+
+            - name: checkout
+              uses: actions/checkout@v4
+            
+              # ---- Build and push the backend image ----
+            - name: build the Docker image
+              run: docker build ./backend/library/ -t temadeveloper/library_proj:latest
+            - name: push image
+              run: |
+                docker push temadeveloper/library_proj:latest
+
+            # ---- Build and push the frontend image ----
+            - name: Build the frontend Docker image
+              # Assumes your frontend Dockerfile is in the 'frontend' directory
+              run: docker build ./frontend/ -t temadeveloper/library_proj_frontend:latest
+            - name: Push frontend image
+              run: |
+                docker push temadeveloper/library_proj_frontend:latest
+
