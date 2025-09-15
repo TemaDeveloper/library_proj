@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend:
+    container_name: library-backend-container
+    image: temadeveloper/library_proj:latest
+    ports:
+      - "3001:3001"
+    networks:
+      - donutly-network
+
+  frontend:
+    container_name: library-frontend-container
+    image: temadeveloper/library_proj_frontend:latest
+    ports:
+      - "80:3000"
+    environment:
+      - BACKEND_API_URL=http://backend:3001
+      - PUB_API=https://gutendex.com/books/
+    networks:
+      - donutly-network
+
+networks:
+  donutly-network:
+    driver: bridge
