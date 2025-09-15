@@ -6,6 +6,9 @@
 
 ---
 
+<img width="1747" height="936" alt="Screenshot 2025-09-15 at 10 32 38 AM" src="https://github.com/user-attachments/assets/1604a8dd-f36c-40a9-b476-e53a034231c9" />
+
+
 ### 📚 About the Project
 
 Donutly is your new digital library, designed for book lovers who want to explore literature without any barriers. Forget subscriptions, fees, or paywalls—here, you just need a desire to read.
