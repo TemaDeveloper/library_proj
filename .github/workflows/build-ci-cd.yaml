@@ -16,22 +16,22 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: temadeveloper
-          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+         username: temadeveloper
+         password: ${{ secrets.DOCKER_HUB_TOKEN }}
         
       - name: Build and push backend image
         uses: docker/build-push-action@v5
         with:
           context: ./backend/library/
           push: true
-          tags: temadeveloper/library_proj:backend-latest
+          tags: temadeveloper/library_proj:latest
           
       - name: Build and push frontend image
         uses: docker/build-push-action@v5
         with:
           context: ./frontend/
           push: true
-          tags: temadeveloper/library_proj:frontend-latest
+          tags: temadeveloper/library_proj_frontend:latest
 
   # Job 2: Deploy the Docker images to your EC2 instance
   deploy_to_ec2:
@@ -46,8 +46,8 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             # Pull the latest backend and frontend images
-            docker pull temadeveloper/library_proj:backend-latest
-            docker pull temadeveloper/library_proj:frontend-latest
+            docker pull temadeveloper/library_proj:latest
+            docker pull temadeveloper/library_proj_frontend:latest
             
             # Stop and remove old containers
             docker stop library-backend-container || true
@@ -56,5 +56,5 @@ jobs:
             docker rm library-frontend-container || true
             
             # Run the new containers
-            docker run -d --name library-backend-container -p 3001:3001 temadeveloper/library_proj:backend-latest
-            docker run -d --name library-frontend-container -p 80:3000 temadeveloper/library_proj:frontend-latest
+            docker run -d --name library-backend-container -p 3001:3001 temadeveloper/library_proj:latest
+            docker run -d --name library-frontend-container -p 80:3000 temadeveloper/library_proj_frontend:latest
