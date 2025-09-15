@@ -4,6 +4,9 @@ on:
     push: 
         branches:
         - main 
+        paths: 
+        - 'backend/library/Dcokerfile'
+        - 'frontend/Dockerfile'
     workflow_dispatch:
 
 jobs: 
