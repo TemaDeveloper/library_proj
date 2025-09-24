@@ -1,2 +1,7 @@
 /.DS_Store
 /.vscode
+/frontend/.env
+/frontend/.env.local
+/frontend/next.config.ts
+/frontend/node_modules
+/backend/.env
