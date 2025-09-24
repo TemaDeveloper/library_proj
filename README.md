@@ -6,6 +6,13 @@
 
 ---
 
+<p align="center">
+  <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg" alt="Contributions Welcome Badge"/>
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License Badge"/>
+  </a>
+</p>
+
 <img width="1747" height="936" alt="Screenshot 2025-09-15 at 10 32 38 AM" src="https://github.com/user-attachments/assets/1604a8dd-f36c-40a9-b476-e53a034231c9" />
 
 
@@ -23,14 +30,14 @@ Key features include:
 
 ### 💻 Technology Stack
 
-* **Frontend:** Next.js (with TypeScript)
-* **Styling:** Tailwind CSS
-* **Database:** [Add your database here, e.g., PostgreSQL, MongoDB]
-* **Backend:** [Add your backend here, e.g., Node.js, Express.js]
+* **Frontend:** Next.js (with TypeScript) ![Next.js](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
+* **Styling:** Tailwind CSS ![Tailwind CSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+* **Database:** PostgreSQL ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+* **Backend:** Spring-Boot ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.7.5-6DB33F?logo=spring&logoColor=fff)
 
 ### 🤝 How to Contribute
 
-This project is **open source**, and we welcome contributions of all kinds! Whether you're a seasoned developer, a new coder, or a passionate bookworm with ideas, your help is invaluable.
+This project is **open source**, and I welcome contributions of all kinds! Whether you're a seasoned developer, a new coder, or a passionate bookworm with ideas, your help is invaluable.
 
 Here’s how you can get started:
 
@@ -56,13 +63,13 @@ Here’s how you can get started:
     git commit -m "feat: add your feature or fix here"
     git push origin feature/your-feature-name
     ```
-7.  **Open a Pull Request:** Go to your forked repository on GitHub and open a pull request. We'll review your changes and merge them as soon as possible.
+7.  **Open a Pull Request:** Go to your forked repository on GitHub and open a pull request. I'll review your changes and merge them as soon as possible.
 
-We are actively working on this project and appreciate any help. Join us in building a better, free, and accessible library for everyone.
+I am actively working on this project and appreciate any help. Join me in building a better, free, and accessible library for everyone.
 
 ### ✉️ Contact
 
-If you have any questions, suggestions, or just want to chat about the project, feel free to open an issue or reach out to us!
+If you have any questions, suggestions, or just want to chat about the project, feel free to open an issue or reach out to me!
 
 ---
 
