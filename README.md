@@ -37,7 +37,7 @@ Here’s how you can get started:
 1.  **Fork the repository:** Click the "Fork" button in the top right corner of this page.
 2.  **Clone the project:** Clone your forked repository to your local machine.
     ```bash
-    git clone [https://github.com/YOUR_USERNAME/library_proj.git](https://github.com/YOUR_USERNAME/library_proj.git)
+    git clone https://github.com/TemaDeveloper/library_proj.git
     ```
 3.  **Create a new branch:** Create a dedicated branch for your feature or bug fix.
     ```bash
