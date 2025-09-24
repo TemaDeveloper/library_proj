@@ -46,7 +46,7 @@ export async function getPubBooks(limit: number = 32, offset: number = 0): Promi
 
 export async function getPubBookDetails(id: number): Promise<PubBookDetailsResponse | null> {
   try {
-    const res = await fetch(`https://gutendex.com/books/${id}`, {
+    const res = await fetch(`${PUB_API}/${id}`, {
       method: 'GET',
       cache: 'no-store',
     });
