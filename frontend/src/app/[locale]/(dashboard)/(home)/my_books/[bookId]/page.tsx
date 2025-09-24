@@ -1,4 +1,4 @@
-import { getBookDetails } from '@/actions/my_book.actions';
+import { getMyBookDetails } from '@/actions/my_book.actions';
 import { buttonVariants } from '@/components/ui/button';
 import { getLocale } from '@/i18n.config';
 import { cn, formatTitleCase, formatToAgo } from '@/lib/utils';
@@ -14,17 +14,17 @@ import { BOOK_CATEGORIES } from '@/constants/books';
 
 export const dynamic = 'force-dynamic';
 
-interface BookDetailPageProps {
+interface MyBookDetailPageProps {
   params: Promise<{ locale: string; bookId: number }>;
 }
 
-export default async function BookDetailPage({ params }: BookDetailPageProps) {
+export default async function MyBookDetailPage({ params }: MyBookDetailPageProps) {
   const { locale, bookId } = await params;
   const lang = getLocale(locale);
   const translations = await getDictionary(lang);
   const bookDetailsTranslations = translations?.page?.bookDetails;
 
-  const bookDetails = await getBookDetails(bookId);
+  const bookDetails = await getMyBookDetails(bookId);
 
   // if book not found, show descriptive message
   if (!bookDetails) {

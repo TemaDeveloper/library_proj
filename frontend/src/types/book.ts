@@ -1,4 +1,4 @@
-import { getBookDetails, getBooks } from "@/actions/my_book.actions";
+import { getMyBookDetails, getMyBooks } from "@/actions/my_book.actions";
 import { getBookReviews } from "@/actions/reviews.action";
 
 export enum bookCategory {
@@ -25,9 +25,9 @@ export interface Filters {
 
 }
 
-export type Book = Awaited<ReturnType<typeof getBookDetails>>;
+export type Book = Awaited<ReturnType<typeof getMyBookDetails>>;
 
-export type BooksDetails = Awaited<ReturnType<typeof getBooks>>;
+export type BooksDetails = Awaited<ReturnType<typeof getMyBooks>>;
 
 export type Reviews = Awaited<ReturnType<typeof getBookReviews>>;
 
