@@ -1,6 +1,6 @@
 // src/app/[locale]/(dashboard)/(home)/page.tsx
 import { getLocale } from '@/i18n.config';
-import { getBooks } from '@/actions/my_book.actions';
+import { getMyBooks } from '@/actions/my_book.actions';
 import Header from '@/components/my_books/Header';
 import BookList from '@/components/my_books/BookList';
 import FilterAndSortSection from '@/components/my_books/FilterAndSortSection';
@@ -26,7 +26,7 @@ export default async function Home({ params, searchParams }: HomePageProps) {
   const formattedFilters: Filters = getFilters(filters);
   const pagination = getPagination(filters.page);
 
-  const response = await getBooks(formattedFilters, pagination);
+  const response = await getMyBooks(formattedFilters, pagination);
 
   let data: Book[] = [];
   let meta = { total_count: 0 };

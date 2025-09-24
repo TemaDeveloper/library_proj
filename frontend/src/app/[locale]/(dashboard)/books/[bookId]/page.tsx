@@ -101,57 +101,38 @@ export default async function BookDetailPage({ params }: BookDetailPageProps) {
         </div>
       </div>
 
-      <div className='flex items-center justify-start w-full space-x-5 font-semibold text-primary/50'>
-        <p>
-          {bookDetailsTranslations.created}{' '}
-          {/* {formatToAgo(Number(bookDetails.createdAt), translations.page.bookDetails.timeAgo)} */}
-        </p>
-        <p>|</p>
-        <p>
-          {bookDetailsTranslations.updated}{' '}
-          {/* {formatToAgo(Number(bookDetails.updatedAt), translations.page.bookDetails.timeAgo)} */}
-        </p>
-      </div>
-
-      {/* Bottom section - Book details */}
-      <div className='flex flex-col space-y-10'>
-        <div className='flex flex-col md:flex-row items-start justify-between'>
-          <div className='flex flex-col items-center justify-between space-y-1'>
-            {/* <StarRating rating={bookDetails.rating} /> */}
-            <p className=''>{bookDetailsTranslations.rating}</p>
-          </div>
-
-          <div className='flex flex-col items-center justify-between space-y-1'>
-            <p className='text-lg text-primary font-semibold'>
-              {/* {bookDetails.publicationYear} */}
-            </p>
-            <p className='font-normal text-primary'>
-              {bookDetailsTranslations.publicationYear}
-            </p>
-          </div>
-
-          <div className='flex flex-col items-center justify-between space-y-1'>
-            <p className='text-lg text-primary font-semibold'>
-              {/* {bookDetails.pages} */}
-            </p>
-            <p className='font-normal text-primary'>
-              {bookDetailsTranslations.numberOfPages}
-            </p>
-          </div>
-
-          <div className='flex flex-col items-center justify-between space-y-1'>
-            <p className='text-lg text-primary font-semibold'>
-              {/* {bookDetails.isbn} */}
-            </p>
-            <p className='font-normal text-primary'>
-              {bookDetailsTranslations.isbn}
-            </p>
-          </div>
+     {/* Tags Section */}
+      <div className='flex flex-col items-start gap-6 pt-4'>
+        <div className='flex flex-wrap items-center gap-3'>
+          {bookDetails.subjects && bookDetails.subjects.map((tag) => (
+            <div
+              key={tag}
+              className='px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium'
+            >
+              {tag}
+            </div>
+          ))}
         </div>
-        <hr />
 
-
-    </div>
+        {/* Action Button */}
+        <button className='flex items-center justify-center gap-2 px-5 py-2.5 font-semibold text-white bg-[#FF6B6B] rounded-lg hover:bg-[#ff4f4f] transition-colors duration-200'>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            width='20'
+            height='20'
+            viewBox='0 0 24 24'
+            fill='currentColor'
+            stroke='currentColor'
+            strokeWidth='2'
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            className='lucide lucide-heart'
+          >
+            <path d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z' />
+          </svg>
+          <span>Read me</span>
+        </button>
+      </div>
     </div>
   );
 }

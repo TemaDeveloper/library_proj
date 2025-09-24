@@ -7,7 +7,7 @@ import { getBookReviews } from "./reviews.action";
 
 const BACKEND_API_URL = process.env.BACKEND_API_URL
 
-export async function getBooks(filters: Filters, pagination: { currentPage: number, limit: number }): Promise<BooksResponse | null> {
+export async function getMyBooks(filters: Filters, pagination: { currentPage: number, limit: number }): Promise<BooksResponse | null> {
   try {
     const offset = (pagination.currentPage - 1) * pagination.limit;
 
@@ -35,7 +35,7 @@ export async function getBooks(filters: Filters, pagination: { currentPage: numb
   }
 }
 
-export async function getBookDetails(id: number): Promise<BookDetailsResponse | null> {
+export async function getMyBookDetails(id: number): Promise<BookDetailsResponse | null> {
   try {
     const res = await fetch(`${BACKEND_API_URL}/api/books/${id}`, {
       method: 'GET',

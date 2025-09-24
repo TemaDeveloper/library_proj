@@ -12,7 +12,7 @@ export default function BookListItem({ book }: BookListItemProps) {
 
   return (
     <Link
-      href={`/books/${book.id}`}
+      href={`/my_books/${book.id}`}
       className='flex flex-col items-center justify-center space-y-3'
     >
       <div className='mx-auto'>
