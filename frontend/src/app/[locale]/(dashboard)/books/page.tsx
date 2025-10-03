@@ -1,6 +1,5 @@
 // src/app/[locale]/(dashboard)/(home)/page.tsx
 import { getLocale } from '@/i18n.config';
-import { getBooks } from '@/actions/my_book.actions';
 import Header from '@/components/my_books/Header';
 import FilterAndSortSection from '@/components/my_books/FilterAndSortSection';
 import { getFilters, getPagination } from '@/lib/utils';
