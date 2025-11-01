@@ -5,6 +5,53 @@
       "books": "Books"
     }
   },
+  "auth": {
+    "login": {
+      "title": "Login",
+      "email": "Email",
+      "password": "Password",
+      "emailPlaceholder": "your.email@example.com",
+      "passwordPlaceholder": "Enter your password",
+      "submit": "Login",
+      "submitting": "Logging in...",
+      "success": "Login successful",
+      "invalid": "Invalid email or password",
+      "serverError": "Server error. Please try again later.",
+      "noAccount": "Don't have an account?",
+      "signupLink": "Sign up"
+    },
+    "signup": {
+      "title": "Sign Up",
+      "fullName": "Full Name",
+      "email": "Email",
+      "password": "Password",
+      "fullNamePlaceholder": "John Doe",
+      "emailPlaceholder": "your.email@example.com",
+      "passwordPlaceholder": "Enter your password",
+      "submit": "Sign Up",
+      "submitting": "Creating account...",
+      "success": "Account created successfully",
+      "emailExists": "Email already exists",
+      "serverError": "Server error. Please try again later.",
+      "hasAccount": "Already have an account?",
+      "loginLink": "Login"
+    },
+    "logout": {
+      "button": "Logout",
+      "success": "Logged out successfully"
+    },
+    "form": {
+      "error": {
+        "emailRequired": "Email is required",
+        "emailInvalid": "Email must be a valid email address",
+        "passwordRequired": "Password is required",
+        "passwordTooShort": "Password must be at least 6 characters long",
+        "fullNameRequired": "Full name is required",
+        "fullNameTooShort": "Full name must be at least 2 characters long",
+        "fullNameTooLong": "Full name cannot exceed 100 characters"
+      }
+    }
+  },
   "actions": {
     "book": {
       "addSuccess": "Book created successfully",
