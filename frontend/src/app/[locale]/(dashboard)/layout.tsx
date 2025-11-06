@@ -22,12 +22,12 @@ export default async function MainLayout({
     <div className='w-full flex bg-accent'>
       {/* Sidebar */}
       <div className='min-h-[calc(100vh)]'>
-        <Sidebar locale={lang} sidebarLinks={sidebarLinks} />
+        <Sidebar locale={lang} sidebarLinks={sidebarLinks} translations={translations} />
       </div>
 
       <div className='w-full bg-white rounded-sm md:m-3 md:mr-0 md:mb-0 overflow-auto invisible-scrollbar'>
         {/* Appbar */}
-        <MobileSidebar locale={lang} sidebarLinks={sidebarLinks} />
+        <MobileSidebar locale={lang} sidebarLinks={sidebarLinks} translations={translations} />
 
         {/* Content */}
         <main className='max-w-7xl mx-auto w-full px-2 md:px-6'>

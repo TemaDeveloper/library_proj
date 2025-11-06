@@ -91,3 +91,33 @@ export const reviewFormSchema = z.object({
     .min(1, "form.error.contentRequired")
     .max(1000, "form.error.contentTooLong"),
 });
+
+export const loginFormSchema = z.object({
+  email: z
+    .string()
+    .trim()
+    .min(1, "auth.form.error.emailRequired")
+    .email("auth.form.error.emailInvalid"),
+  password: z
+    .string()
+    .min(1, "auth.form.error.passwordRequired")
+    .min(6, "auth.form.error.passwordTooShort"),
+});
+
+export const signupFormSchema = z.object({
+  username: z
+    .string()
+    .trim()
+    .min(1, "auth.form.error.fullNameRequired")
+    .min(2, "auth.form.error.fullNameTooShort")
+    .max(100, "auth.form.error.fullNameTooLong"),
+  email: z
+    .string()
+    .trim()
+    .min(1, "auth.form.error.emailRequired")
+    .email("auth.form.error.emailInvalid"),
+  password: z
+    .string()
+    .min(1, "auth.form.error.passwordRequired")
+    .min(6, "auth.form.error.passwordTooShort"),
+});

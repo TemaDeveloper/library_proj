@@ -5,6 +5,53 @@
       "books": "分析"
     }
   },
+  "auth": {
+    "login": {
+      "title": "ログイン",
+      "email": "メールアドレス",
+      "password": "パスワード",
+      "emailPlaceholder": "your.email@example.com",
+      "passwordPlaceholder": "パスワードを入力",
+      "submit": "ログイン",
+      "submitting": "ログイン中...",
+      "success": "ログインに成功しました",
+      "invalid": "メールアドレスまたはパスワードが無効です",
+      "serverError": "サーバーエラーが発生しました。しばらくしてからもう一度お試しください。",
+      "noAccount": "アカウントをお持ちでないですか？",
+      "signupLink": "サインアップ"
+    },
+    "signup": {
+      "title": "サインアップ",
+      "fullName": "氏名",
+      "email": "メールアドレス",
+      "password": "パスワード",
+      "fullNamePlaceholder": "山田 太郎",
+      "emailPlaceholder": "your.email@example.com",
+      "passwordPlaceholder": "パスワードを入力",
+      "submit": "サインアップ",
+      "submitting": "アカウント作成中...",
+      "success": "アカウントが正常に作成されました",
+      "emailExists": "メールアドレスは既に使用されています",
+      "serverError": "サーバーエラーが発生しました。しばらくしてからもう一度お試しください。",
+      "hasAccount": "既にアカウントをお持ちですか？",
+      "loginLink": "ログイン"
+    },
+    "logout": {
+      "button": "ログアウト",
+      "success": "ログアウトしました"
+    },
+    "form": {
+      "error": {
+        "emailRequired": "メールアドレスが必要です",
+        "emailInvalid": "有効なメールアドレスを入力してください",
+        "passwordRequired": "パスワードが必要です",
+        "passwordTooShort": "パスワードは6文字以上で入力してください",
+        "fullNameRequired": "氏名が必要です",
+        "fullNameTooShort": "氏名は2文字以上で入力してください",
+        "fullNameTooLong": "氏名は100文字以内で入力してください"
+      }
+    }
+  },
   "actions": {
     "book": {
       "addSuccess": "本が正常に作成されました",
